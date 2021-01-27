@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>JSON Similarity comparator</h1>
+
+  <div class="form">
+    <%= form_with url: "/compare", method: :post, multipart: true, local: true do |form| %>
+    <%= form.file_field :file_one %>
+    <%= form.file_field :file_two %>
+    <input name="compare" type="submit" value="compare" />
+    <% end %>
+  </div>
+
+  <div class="result">
+    Score: <%= @diff || 'NA' %>
+  </div>
+</div>
